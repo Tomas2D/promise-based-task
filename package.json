@@ -1,0 +1,57 @@
+{
+  "name": "promise-based-task",
+  "description": "Create a task and resolve it later via a Promise approach. Run time-consuming processes only once.",
+  "keywords": [
+    "promise",
+    "promise task",
+    "promise based task",
+    "promise task map"
+  ],
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "repository": "git@github.com:Tomas2D/promise-based-task.git",
+  "author": "Tomáš Dvořák <toomas2d@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "rm -Rf lib; tsc -p tsconfig.build.json",
+    "lint": "eslint \"{src,test}/**/*.ts\" --fix",
+    "prettier": "prettier \"{src,test}/**/*.ts\" --write",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "changelog": "npx gitmoji-changelog",
+    "release": "yarn version",
+    "version": "yarn changelog && code --wait CHANGELOG.md && git add README.md CHANGELOG.md",
+    "prepublishOnly": "yarn build",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.5",
+    "lint-staged": "^12.1.4",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
