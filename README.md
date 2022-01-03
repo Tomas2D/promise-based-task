@@ -6,7 +6,9 @@
 With this tiny library, you will be able to solve situations where you want to prevent  
 multiple requests to do time-consuming operations simultaneously.
 With this approach, one request will take care of creating the final data and other processes
-will asynchronously wait for the completion.
+will asynchronously wait for the completion. 
+
+**NOTE:** This library is useful if you need a lihtweight solution without an extra service like Redis / PubSub etc.
 
 Does this library help you? Please give it a ⭐️!
 
