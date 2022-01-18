@@ -8,7 +8,7 @@ multiple requests to do time-consuming operations simultaneously.
 With this approach, one request will take care of creating the final data and other processes
 will asynchronously wait for the completion. 
 
-**NOTE:** This library is useful if you need a lihtweight solution without an extra service like Redis / PubSub etc.
+**NOTE:** This library is useful if you need a lightweight solution without an extra service like Redis / PubSub etc.
 
 Does this library help you? Please give it a ⭐️!
 
@@ -17,6 +17,7 @@ Does this library help you? Please give it a ⭐️!
 - Later resolving of a task in a `Promise` way
 - Auto rejecting promises removed from the shared data structure (`TaskMap`, which is an extension of a `Map` data structure)
 - Zero dependencies
+- Map with limited space (sliding-window)
 
 ## 🚀 Installation
 
@@ -106,5 +107,31 @@ app.get('/observations/:date', async function (req, res) {
   }
 
   downloadDataFromS3(date).pipe(res)
+})
+```
+
+**Sliding window**
+
+When your map size reaches a specified threshold, the oldest values will be
+removed. You can be then sure that the size of the map will never overflow your memory.
+
+```typescript
+import { Task, SlidingTaskMap } from 'promise-based-task'
+
+const WINDOW_SIZE = 10
+const tasks = new SlidingTaskMap<string, number[]>(WINDOW_SIZE)
+
+app.get('/calculation/:date', async function () {
+  const date = req.params.date
+
+  if (!tasks.has(date)) {
+    const task = new Task<void>()
+    tasks.set(date, task)
+    
+    const data = await fetchData(date)
+    task.resolve(data)
+  }
+  
+  return tasks.get(date)
 })
 ```
