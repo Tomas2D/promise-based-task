@@ -111,6 +111,17 @@ app.get('/observations/:date', async function (req, res) {
 ```
 
 **Sliding window**
+```typescript
+// Type Definition
+declare class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
+    constructor(windowSize: number);
+    set(key: K, value: V): this; // create/override 
+    delete(key: K): boolean; // remove single entry
+    clear(): void;  // removes all entries
+    pop(): boolean; // removes oldest entry, false for an empty window
+    shift(): boolean;  // removes newest entry, false for an empty window
+}
+```
 
 When your map size reaches a specified threshold, the oldest values will be
 removed. You can be then sure that the size of the map will never overflow your memory.
