@@ -1,5 +1,21 @@
 # Changelog
 
+<a name="1.2.0"></a>
+## 1.2.0 (2022-01-31)
+
+### Added
+
+- ✨ Add pop/shift methods for SlidingTaskMap [[2fb3682](https://github.com/Tomas2D/promise-based-task/commit/2fb368235bfb9aa28bc6d3755709e58982fd5cb3)]
+
+### Changed
+
+- ♻️ Improve typing [[b051f5b](https://github.com/Tomas2D/promise-based-task/commit/b051f5b8b20e7b4155feb0728b1c66a1d01608c7)]
+
+### Miscellaneous
+
+- 📝 Mention SlidingTaskMap type definition in README [[4245168](https://github.com/Tomas2D/promise-based-task/commit/42451688fe7c7ec367bb751ad0af2069aa258d98)]
+
+
 <a name="1.1.0"></a>
 ## 1.1.0 (2022-01-18)
 
