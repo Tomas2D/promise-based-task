@@ -16,7 +16,7 @@ class TaskMap<K, V extends Deletable> extends Map<K, V> {
     return super.set(key, value);
   }
 
-  clear() {
+  clear(): void {
     for (const key of this.keys()) {
       this.delete(key);
     }

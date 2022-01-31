@@ -20,7 +20,7 @@ class Task<T> implements Promise<T>, Deletable {
     this.promise.catch(() => {});
   }
 
-  destructor() {
+  destructor(): void {
     this.reject(new TaskDestroyedException('Object already destroyed'));
   }
 
