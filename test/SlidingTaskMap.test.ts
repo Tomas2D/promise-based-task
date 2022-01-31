@@ -50,4 +50,35 @@ describe('SlidingTaskMap', () => {
     // @ts-expect-error simulating no type safety env
     expect(() => new SlidingTaskMap('x')).toThrow();
   });
+
+  it('Removes element from front (shift)', async () => {
+    const map = new SlidingTaskMap<string, Task<number>>(5);
+    expect(map.pop()).toBe(false);
+    expect(map.shift()).toBe(false);
+
+    const tasks = [new Task<number>(), new Task<number>(), new Task<number>()];
+
+    map.set('1', tasks[0]);
+    map.set('2', tasks[1]);
+    map.set('3', tasks[2]);
+
+    expect(map.size).toBe(3);
+
+    expect(map.pop()).toBe(true);
+    expect(map.size).toBe(2);
+    expect(map.has('1')).toBe(true);
+    expect(map.has('2')).toBe(true);
+    expect(map.has('3')).toBe(false);
+
+    expect(map.shift()).toBe(true);
+    expect(map.size).toBe(1);
+    expect(map.has('1')).toBe(false);
+    expect(map.has('2')).toBe(true);
+    expect(map.has('3')).toBe(false);
+
+    expect(map.pop()).toBe(true);
+    expect(map.size).toBe(0);
+    expect(map.has('1')).toBe(false);
+    expect(map.shift()).toBe(false);
+  });
 });

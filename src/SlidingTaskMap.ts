@@ -17,7 +17,7 @@ class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
     }
 
     if (this.size + 1 > this.windowSize) {
-      this.delete(this.keysByTime[0]);
+      this.shift();
     }
     this.keysByTime.push(key);
     return super.set(key, value);
@@ -32,9 +32,27 @@ class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
     return didDelete;
   }
 
-  clear() {
+  clear(): void {
     super.clear();
     this.keysByTime.length = 0;
+  }
+
+  pop(): boolean {
+    if (this.keysByTime.length === 0) {
+      return false;
+    }
+
+    const key = this.keysByTime[this.keysByTime.length - 1];
+    return this.delete(key);
+  }
+
+  shift(): boolean {
+    if (this.keysByTime.length === 0) {
+      return false;
+    }
+
+    const key = this.keysByTime[0];
+    return this.delete(key);
   }
 }
 
