@@ -146,3 +146,6 @@ app.get('/calculation/:date', async function () {
   return tasks.get(date)
 })
 ```
+
+## ✅ TODO
+- [ ] Add support for TTL on single task, task map and the sliding task map
