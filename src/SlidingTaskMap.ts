@@ -2,30 +2,65 @@ import { Deletable } from './types';
 import TaskMap from './TaskMap';
 
 class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
-  private keysByTime: K[] = [];
+  private readonly keysByTime: K[] = [];
+  private readonly ttlMap: Map<K, NodeJS.Timeout> = new Map();
 
-  constructor(private readonly windowSize: number) {
+  constructor(private readonly windowSize: number, private readonly ttl?: number) {
     super();
-    if (windowSize < 1 || isNaN(Number(windowSize))) {
+
+    if (windowSize < 1 || isNaN(windowSize)) {
       throw new TypeError(`windowSize cannot be less than 1!`);
+    }
+    this.windowSize = Number(windowSize);
+
+    if (ttl !== undefined) {
+      if (isNaN(ttl) || ttl < 1) {
+        throw new TypeError(`ttl cannot be less than 1!`);
+      } else {
+        this.ttl = Number(ttl);
+      }
     }
   }
 
-  set(key: K, value: V): this {
+  private clearTimeout(key: K) {
+    if (this.ttlMap.has(key)) {
+      clearTimeout(this.ttlMap.get(key)!);
+      this.ttlMap.delete(key);
+    }
+  }
+
+  private setTimeout(key: K, customTTL?: number) {
+    const ttl = Number(customTTL ?? this.ttl);
+
+    if (ttl > 0) {
+      const timeoutId = setTimeout(() => {
+        this.delete(key);
+      }, ttl);
+
+      this.ttlMap.set(key, timeoutId);
+    }
+  }
+
+  set(key: K, value: V, customTTL?: number): this {
     if (this.has(key)) {
-      return super.set(key, value);
+      super.set(key, value);
+    } else {
+      if (this.size + 1 > this.windowSize) {
+        this.shift();
+      }
+
+      this.keysByTime.push(key);
+      super.set(key, value);
     }
 
-    if (this.size + 1 > this.windowSize) {
-      this.shift();
-    }
-    this.keysByTime.push(key);
-    return super.set(key, value);
+    this.setTimeout(key, customTTL);
+    return this;
   }
 
   delete(key: K): boolean {
     const didDelete = super.delete(key);
     if (didDelete) {
+      this.clearTimeout(key);
       const deleteIndex = this.keysByTime.indexOf(key);
       this.keysByTime.splice(deleteIndex, 1);
     }
@@ -35,6 +70,7 @@ class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
   clear(): void {
     super.clear();
     this.keysByTime.length = 0;
+    this.ttlMap.clear();
   }
 
   pop(): boolean {
