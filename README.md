@@ -114,8 +114,8 @@ app.get('/observations/:date', async function (req, res) {
 ```typescript
 // Type Definition
 declare class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
-    constructor(windowSize: number);
-    set(key: K, value: V): this; // create/override 
+    constructor(windowSize: number, ttl?: number);
+    set(key: K, value: V, customTTL?: number): this; // create/override 
     delete(key: K): boolean; // remove single entry
     clear(): void;  // removes all entries
     pop(): boolean; // removes oldest entry, false for an empty window
@@ -130,7 +130,8 @@ removed. You can be then sure that the size of the map will never overflow your 
 import { Task, SlidingTaskMap } from 'promise-based-task'
 
 const WINDOW_SIZE = 10
-const tasks = new SlidingTaskMap<string, number[]>(WINDOW_SIZE)
+const TTL = 60 * 1000 // data will persist 60 seconds in a cache
+const tasks = new SlidingTaskMap<string, number[]>(WINDOW_SIZE, TTL)
 
 app.get('/calculation/:date', async function () {
   const date = req.params.date
@@ -146,6 +147,3 @@ app.get('/calculation/:date', async function () {
   return tasks.get(date)
 })
 ```
-
-## ✅ TODO
-- [ ] Add support for TTL on single task, task map and the sliding task map
