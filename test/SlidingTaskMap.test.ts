@@ -1,6 +1,10 @@
 import { Task, SlidingTaskMap } from '../src';
 
 describe('SlidingTaskMap', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
   it('Counts', async () => {
     const map = new SlidingTaskMap<string, Task<number>>(5);
 
@@ -80,5 +84,63 @@ describe('SlidingTaskMap', () => {
     expect(map.size).toBe(0);
     expect(map.has('1')).toBe(false);
     expect(map.shift()).toBe(false);
+  });
+
+  it('Throws with invalid TTL', () => {
+    expect(() => new SlidingTaskMap(5, 0)).toThrow();
+    expect(() => new SlidingTaskMap(5, -1)).toThrow();
+    expect(() => new SlidingTaskMap(5, null)).toThrow();
+    expect(() => new SlidingTaskMap(5, undefined)).not.toThrow();
+    expect(() => new SlidingTaskMap(5, 10)).not.toThrow();
+  });
+
+  it('Deletes a task after TTL some period', () => {
+    jest.useFakeTimers();
+
+    const setTimeoutSpy = jest.spyOn(global, 'setTimeout');
+    const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout');
+
+    const ttl = 500;
+    const map = new SlidingTaskMap<string, Task<number>>(5, ttl);
+    map.set('1', new Task<number>(1));
+    expect(setTimeoutSpy).toBeCalledTimes(1);
+    expect(map.size).toBe(1);
+
+    map.set('2', new Task<number>(2), ttl * 2);
+    expect(setTimeoutSpy).toBeCalledTimes(2);
+    expect(map.size).toBe(2);
+
+    map.set('3', new Task<number>(3), ttl * 3);
+    expect(setTimeoutSpy).toBeCalledTimes(3);
+    expect(map.size).toBe(3);
+
+    jest.advanceTimersByTime(ttl);
+    expect(map.size).toBe(2);
+    expect(clearTimeoutSpy).toBeCalledTimes(1);
+
+    jest.advanceTimersByTime(ttl);
+    expect(map.size).toBe(1);
+    expect(clearTimeoutSpy).toBeCalledTimes(2);
+
+    jest.advanceTimersByTime(ttl);
+    expect(map.size).toBe(0);
+    expect(clearTimeoutSpy).toBeCalledTimes(3);
+
+    map.set('4', new Task<number>(4), ttl);
+    expect(clearTimeoutSpy).toBeCalledTimes(3);
+    expect(setTimeoutSpy).toBeCalledTimes(4);
+    expect(map.size).toBe(1);
+    map.set('4', new Task<number>(4), ttl);
+    expect(setTimeoutSpy).toBeCalledTimes(5);
+    expect(clearTimeoutSpy).toBeCalledTimes(4);
+    expect(map.size).toBe(1);
+
+    jest.advanceTimersByTime(ttl);
+    expect(clearTimeoutSpy).toBeCalledTimes(5);
+    expect(setTimeoutSpy).toBeCalledTimes(5);
+    expect(map.size).toBe(0);
+
+    setTimeoutSpy.mockReset();
+    clearTimeoutSpy.mockReset();
   });
 });
