@@ -1,5 +1,18 @@
 # Changelog
 
+<a name="1.3.1"></a>
+## 1.3.1 (2022-07-04)
+
+### Changed
+
+- 🔧 Update repository info in package.json [[a302856](https://github.com/Tomas2D/promise-based-task/commit/a302856c6d9e3538fce334ad7b7fdb6e414bfd79)]
+
+### Miscellaneous
+
+-  Merge pull request [#1](https://github.com/Tomas2D/promise-based-task/issues/1) from Tomas2D/dependabot/npm_and_yarn/minimist-1.2.6 [[608eda5](https://github.com/Tomas2D/promise-based-task/commit/608eda561dfe2832c4dc6f5b20365076d638ca5c)]
+-  Bump minimist from 1.2.5 to 1.2.6 [[8b0e70b](https://github.com/Tomas2D/promise-based-task/commit/8b0e70b88bc4ba400459db06d1d9edd50ec90826)]
+
+
 <a name="1.3.0"></a>
 ## 1.3.0 (2022-02-05)
 
