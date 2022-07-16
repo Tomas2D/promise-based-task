@@ -74,4 +74,9 @@ describe('Task', () => {
       task.destructor();
     }).not.toThrow();
   });
+
+  it('Prints valid name', () => {
+    const task = new Task<number>(42)
+    expect(task.toString()).toBe(`[object ${Task.name}]`)
+  })
 });

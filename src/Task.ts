@@ -41,7 +41,9 @@ class Task<T> implements Promise<T>, Deletable {
     return this.promise.finally(onfinally);
   }
 
-  readonly [Symbol.toStringTag]: string;
+  get [Symbol.toStringTag]() {
+    return Task.name
+  }
 }
 
 export default Task;
