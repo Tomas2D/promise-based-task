@@ -26,8 +26,8 @@ class Task<T> implements Promise<T>, Deletable {
       }
     });
 
-    if (immediatelyResolveValue !== undefined) {
-      this.resolve(immediatelyResolveValue);
+    if (arguments.length > 0) {
+      this.resolve(immediatelyResolveValue as T);
     }
 
     this._promise.catch(() => { /* Prevent "UnhandledPromiseRejectionWarning" */ });

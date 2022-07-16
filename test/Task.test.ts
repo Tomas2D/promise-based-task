@@ -34,6 +34,15 @@ describe('Task', () => {
     expect(taskImmediately.state).toBe('resolved')
   })
 
+  it('Resolves immediately with undefined', async () => {
+    const task = new Task()
+    expect(task.state).toBe('pending')
+
+    const taskUndefined = new Task(undefined)
+    expect(taskUndefined.state).toBe('resolved')
+    await expect(taskUndefined).resolves.toBe(undefined)
+  });
+
   it('Catch on reject', async () => {
     const task = new Task();
     task.reject('err');
