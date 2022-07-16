@@ -19,6 +19,21 @@ describe('Task', () => {
     await expect(task).resolves.toBe(42);
   });
 
+  it('Contains information about internal promise state', async () => {
+    const task = new Task()
+    expect(task.state).toBe('pending')
+    task.resolve(42)
+    expect(task.state).toBe('resolved')
+
+    const taskErr = new Task()
+    expect(taskErr.state).toBe('pending')
+    taskErr.reject(new Error('duno'))
+    expect(taskErr.state).toBe('rejected')
+
+    const taskImmediately = new Task(42)
+    expect(taskImmediately.state).toBe('resolved')
+  })
+
   it('Catch on reject', async () => {
     const task = new Task();
     task.reject('err');
