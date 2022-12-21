@@ -19,6 +19,14 @@ describe('Task', () => {
     await expect(task).resolves.toBe(42);
   });
 
+  it('Can access to a resolved value', async () => {
+    const task = new Task<number>();
+    task.resolve(42);
+
+    await expect(task).resolves.toBe(42)
+    await expect(task).resolves.toBe(task.resolvedValue())
+  })
+
   it('Contains information about internal promise state', async () => {
     const task = new Task()
     expect(task.state).toBe('pending')

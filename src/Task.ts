@@ -10,6 +10,7 @@ export enum TaskState {
 class Task<T> implements Promise<T>, Deletable {
   private _promise: Promise<T>;
   private _state: TaskState = TaskState.PENDING
+  private _resolvedValue: Readonly<T> | undefined
 
   public resolve!: (value: T | PromiseLike<T>) => void;
   public reject!: (reason?: any) => void;
@@ -30,7 +31,10 @@ class Task<T> implements Promise<T>, Deletable {
       this.resolve(immediatelyResolveValue as T);
     }
 
-    this._promise.catch(() => { /* Prevent "UnhandledPromiseRejectionWarning" */ });
+    this._promise.then(value => {
+      console.info('resolved', value)
+      this._resolvedValue = value
+    }).catch(() => { /* Prevent "UnhandledPromiseRejectionWarning" */ });
   }
 
   destructor(): void {
@@ -56,6 +60,10 @@ class Task<T> implements Promise<T>, Deletable {
 
   get state(): TaskState {
     return this._state
+  }
+
+  resolvedValue(): Readonly<T> | undefined {
+    return this._resolvedValue
   }
 
   get [Symbol.toStringTag]() {
