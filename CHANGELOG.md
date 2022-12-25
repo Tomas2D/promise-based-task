@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="2.0.3"></a>
+## 2.0.3 (2022-12-25)
+
+### Changed
+
+- ♻️ One-file per bundle [[e5bff5a](https://github.com/Tomas2D/promise-based-task/commit/e5bff5a3f5b093c4adaf5e0b21b4e11877a7702c)]
+
+
 <a name="2.0.2"></a>
 ## 2.0.2 (2022-12-25)
 
