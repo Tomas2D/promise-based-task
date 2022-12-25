@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="2.0.1"></a>
+## 2.0.1 (2022-12-25)
+
+### Fixed
+
+- 🐛 Update exports [[6f7dc8a](https://github.com/Tomas2D/promise-based-task/commit/6f7dc8a44bf5d9298b579459cb128c9ba293ddc1)]
+
+
 <a name="2.0.0"></a>
 ## 2.0.0 (2022-12-25)
 
