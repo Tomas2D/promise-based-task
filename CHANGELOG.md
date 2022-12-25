@@ -1,5 +1,30 @@
 # Changelog
 
+<a name="2.0.0"></a>
+## 2.0.0 (2022-12-25)
+
+### Changed
+
+- 🔧 Update Jest config [[5834181](https://github.com/Tomas2D/promise-based-task/commit/5834181eb669c66512f51cd811b4072b5215b874)]
+- ⬆️ Switch to ES2020 (Node 14.x) [[9ba80db](https://github.com/Tomas2D/promise-based-task/commit/9ba80db7e1c79a010697754604acd6b335804c9b)]
+
+### Removed
+
+- 🔇 Remove forgotten log [[a657e1c](https://github.com/Tomas2D/promise-based-task/commit/a657e1c29955e0b874eb0839909f28eb94945d96)]
+
+### Miscellaneous
+
+- 📦 Add export for ESM [[d99687b](https://github.com/Tomas2D/promise-based-task/commit/d99687bb48d143fe07858eecda09376034525e45)]
+-  Merge pull request [#110](https://github.com/Tomas2D/promise-based-task/issues/110) from Tomas2D/dependabot/npm_and_yarn/types/node-16.18.10 [[296ac0c](https://github.com/Tomas2D/promise-based-task/commit/296ac0c423e4d2d694f864362ca78e74ce76ec6d)]
+-  Merge pull request [#111](https://github.com/Tomas2D/promise-based-task/issues/111) from Tomas2D/dependabot/npm_and_yarn/eslint-8.30.0 [[d92bb38](https://github.com/Tomas2D/promise-based-task/commit/d92bb384139718c6db3f30f60510188e2129aaf8)]
+-  Merge pull request [#112](https://github.com/Tomas2D/promise-based-task/issues/112) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-5.47.0 [[d40b340](https://github.com/Tomas2D/promise-based-task/commit/d40b340f898a931f213987dce64dce0071de9f4e)]
+-  Merge pull request [#113](https://github.com/Tomas2D/promise-based-task/issues/113) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/parser-5.47.0 [[54b8eca](https://github.com/Tomas2D/promise-based-task/commit/54b8ecabff1c0301eb3e273342bced75e7cd4821)]
+-  Bump @typescript-eslint/eslint-plugin from 5.46.1 to 5.47.0 [[bb2ba88](https://github.com/Tomas2D/promise-based-task/commit/bb2ba88a80096398a904d51e682858765ca7d088)]
+-  Bump eslint from 8.29.0 to 8.30.0 [[27cd01a](https://github.com/Tomas2D/promise-based-task/commit/27cd01a3a5a51edf414db9215a8c75efe298bf82)]
+-  Bump @typescript-eslint/parser from 5.46.1 to 5.47.0 [[ceb5695](https://github.com/Tomas2D/promise-based-task/commit/ceb5695b1eb89f13ca9449cab709e43776cd3e8b)]
+-  Bump @types/node from 16.18.9 to 16.18.10 [[7d994fe](https://github.com/Tomas2D/promise-based-task/commit/7d994fed2e22976420abff534270febcbe96376d)]
+
+
 <a name="1.4.0"></a>
 ## 1.4.0 (2022-12-21)
 
