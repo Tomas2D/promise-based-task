@@ -22,6 +22,7 @@
   ],
   "coveragePathIgnorePatterns": [
     "<rootDir>/node_modules",
-    "<rootDir>/lib"
+    "<rootDir>/lib",
+    "<rootDir>/tsup.config.ts"
   ]
 }
