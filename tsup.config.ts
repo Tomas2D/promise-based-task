@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: ['src/**'],
+  entry: ['src/index.ts'],
   outDir: 'lib',
   sourcemap: true,
   dts: true,
@@ -9,7 +9,7 @@ export default defineConfig({
   treeshake: true,
   shims: true,
   legacyOutput: false,
-  bundle: false,
+  bundle: true,
   splitting: true,
   tsconfig: 'tsconfig.build.json'
 });
