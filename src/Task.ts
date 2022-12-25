@@ -7,7 +7,7 @@ export enum TaskState {
   REJECTED = 'rejected'
 }
 
-class Task<T> implements Promise<T>, Deletable {
+export class Task<T> implements Promise<T>, Deletable {
   private _promise: Promise<T>;
   private _state: TaskState = TaskState.PENDING
   private _resolvedValue: Readonly<T> | undefined
@@ -69,5 +69,3 @@ class Task<T> implements Promise<T>, Deletable {
     return Task.name
   }
 }
-
-export default Task;

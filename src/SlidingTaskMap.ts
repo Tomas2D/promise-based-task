@@ -1,7 +1,7 @@
-import { Deletable } from './types';
-import TaskMap from './TaskMap';
+import type { Deletable } from './types';
+import { TaskMap } from './TaskMap';
 
-class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
+export class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
   private readonly keysByTime: K[] = [];
   private readonly ttlMap: Map<K, NodeJS.Timeout> = new Map();
 
@@ -91,5 +91,3 @@ class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
     return this.delete(key);
   }
 }
-
-export default SlidingTaskMap;

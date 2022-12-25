@@ -1,6 +1,6 @@
 import type { Deletable } from './types';
 
-class TaskMap<K, V extends Deletable> extends Map<K, V> {
+export class TaskMap<K, V extends Deletable> extends Map<K, V> {
   delete(key: K): boolean {
     if (this.has(key)) {
       const target = this.get(key)!;
@@ -24,5 +24,3 @@ class TaskMap<K, V extends Deletable> extends Map<K, V> {
     super.clear();
   }
 }
-
-export default TaskMap;
