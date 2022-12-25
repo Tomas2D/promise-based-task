@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="2.0.2"></a>
+## 2.0.2 (2022-12-25)
+
+### Changed
+
+- ♻️ Remove all default exports [[0981fdf](https://github.com/Tomas2D/promise-based-task/commit/0981fdf3357342d67e5d03cc40347987c2923ce3)]
+
+
 <a name="2.0.1"></a>
 ## 2.0.1 (2022-12-25)
 
