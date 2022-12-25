@@ -32,7 +32,6 @@ class Task<T> implements Promise<T>, Deletable {
     }
 
     this._promise.then(value => {
-      console.info('resolved', value)
       this._resolvedValue = value
     }).catch(() => { /* Prevent "UnhandledPromiseRejectionWarning" */ });
   }
