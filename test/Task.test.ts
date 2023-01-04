@@ -27,6 +27,16 @@ describe('Task', () => {
     await expect(task).resolves.toBe(task.resolvedValue())
   })
 
+  it('Can access to a rejected value', async () => {
+    const task = new Task<number>();
+
+    const err = new Error('Fail')
+    task.reject(err);
+
+    await expect(task).rejects.toBe(err)
+    await expect(task).rejects.toBe(task.rejectedValue())
+  })
+
   it('Contains information about internal promise state', async () => {
     const task = new Task()
     expect(task.state).toBe('pending')
@@ -70,7 +80,7 @@ describe('Task', () => {
   });
 
   it('Ignores double reject', async () => {
-    const task = new Task<number>();
+    const task = new Task<number, string | number>();
     task.reject('nah');
     task.reject(100);
     await expect(task).rejects.toBe('nah');

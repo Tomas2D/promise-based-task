@@ -7,13 +7,14 @@ export enum TaskState {
   REJECTED = 'rejected'
 }
 
-export class Task<T> implements Promise<T>, Deletable {
+export class Task<T, E = any> implements Promise<T>, Deletable {
   private _promise: Promise<T>;
   private _state: TaskState = TaskState.PENDING
   private _resolvedValue: Readonly<T> | undefined
+  private _rejectedValue: E | undefined
 
   public resolve!: (value: T | PromiseLike<T>) => void;
-  public reject!: (reason?: any) => void;
+  public reject!: (reason?: E) => void;
 
   constructor(immediatelyResolveValue?: T) {
     this._promise = new Promise<T>((_resolve, _reject) => {
@@ -33,11 +34,14 @@ export class Task<T> implements Promise<T>, Deletable {
 
     this._promise.then(value => {
       this._resolvedValue = value
-    }).catch(() => { /* Prevent "UnhandledPromiseRejectionWarning" */ });
+    }).catch((err) => {
+      /* Prevent "UnhandledPromiseRejectionWarning" */
+      this._rejectedValue = err
+    });
   }
 
   destructor(): void {
-    this.reject(new TaskDestroyedException('Object already destroyed'));
+    this.reject(new TaskDestroyedException('Object already destroyed') as E);
   }
 
   then<TResult1 = T, TResult2 = never>(
@@ -63,6 +67,10 @@ export class Task<T> implements Promise<T>, Deletable {
 
   resolvedValue(): Readonly<T> | undefined {
     return this._resolvedValue
+  }
+
+  rejectedValue(): E | undefined {
+    return this._rejectedValue
   }
 
   get [Symbol.toStringTag]() {
