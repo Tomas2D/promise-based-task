@@ -1,5 +1,20 @@
 # Changelog
 
+<a name="2.1.0"></a>
+## 2.1.0 (2023-01-04)
+
+### Added
+
+- ✨ Add support for synchronously accessing the rejected value [[e160b34](https://github.com/Tomas2D/promise-based-task/commit/e160b34082ca0eeb4927bc0c3ec2d4d2db3b6330)]
+
+### Miscellaneous
+
+-  Merge pull request [#114](https://github.com/Tomas2D/promise-based-task/issues/114) from Tomas2D/dependabot/npm_and_yarn/types/node-16.18.11 [[c241ea7](https://github.com/Tomas2D/promise-based-task/commit/c241ea743f26d3d9344b116b8dd5a5da6696fd7a)]
+-  Merge pull request [#116](https://github.com/Tomas2D/promise-based-task/issues/116) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/parser-5.47.1 [[1055c37](https://github.com/Tomas2D/promise-based-task/commit/1055c37331a6be42f641f82c7fd44eb1e86d8ee6)]
+-  Bump @typescript-eslint/parser from 5.47.0 to 5.47.1 [[2c1f7aa](https://github.com/Tomas2D/promise-based-task/commit/2c1f7aa8798f20e7aa3a80fe850f43bb33188de8)]
+-  Bump @types/node from 16.18.10 to 16.18.11 [[b1225ef](https://github.com/Tomas2D/promise-based-task/commit/b1225efe03a4b3d4669ab820a61fab558a2e5152)]
+
+
 <a name="2.0.3"></a>
 ## 2.0.3 (2022-12-25)
 
