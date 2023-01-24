@@ -1,5 +1,46 @@
 # Changelog
 
+<a name="2.2.0"></a>
+## 2.2.0 (2023-01-24)
+
+### Added
+
+- ✨ Add TaskQueue [[15bbb20](https://github.com/Tomas2D/promise-based-task/commit/15bbb20bf3fb56393e3104b82d10db0628f6cf1a)]
+
+### Miscellaneous
+
+-  Merge pull request [#130](https://github.com/Tomas2D/promise-based-task/issues/130) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/parser-5.49.0 [[6ed5d9b](https://github.com/Tomas2D/promise-based-task/commit/6ed5d9bd193d095fd5ce0730452c417963c02261)]
+-  Merge pull request [#131](https://github.com/Tomas2D/promise-based-task/issues/131) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-5.49.0 [[ded71f7](https://github.com/Tomas2D/promise-based-task/commit/ded71f73b2b0a337a9dcb4647a491c8d2bdf7a2a)]
+-  Merge pull request [#126](https://github.com/Tomas2D/promise-based-task/issues/126) from Tomas2D/dependabot/npm_and_yarn/prettier-2.8.3 [[863b7e1](https://github.com/Tomas2D/promise-based-task/commit/863b7e1346dc13cbd95557fcc093b1832dd17d59)]
+-  Bump @typescript-eslint/parser from 5.48.2 to 5.49.0 [[7ba51ae](https://github.com/Tomas2D/promise-based-task/commit/7ba51ae01fc7aac6cfb973564c7850fc75e83d62)]
+-  Bump @typescript-eslint/eslint-plugin from 5.48.2 to 5.49.0 [[391a41a](https://github.com/Tomas2D/promise-based-task/commit/391a41a42cb465d658307073719fce33396da0f6)]
+-  Merge pull request [#128](https://github.com/Tomas2D/promise-based-task/issues/128) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-5.48.2 [[157f966](https://github.com/Tomas2D/promise-based-task/commit/157f9662fff03f2dab70127fdc4cad8f5025e4d6)]
+-  Merge pull request [#127](https://github.com/Tomas2D/promise-based-task/issues/127) from Tomas2D/dependabot/npm_and_yarn/eslint-8.32.0 [[f92e3f3](https://github.com/Tomas2D/promise-based-task/commit/f92e3f3c62b82c6a5891892c2d2f4fd908352cb4)]
+-  Merge pull request [#129](https://github.com/Tomas2D/promise-based-task/issues/129) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/parser-5.48.2 [[d357775](https://github.com/Tomas2D/promise-based-task/commit/d357775c782dcb753714089618f229ec71ce9683)]
+-  Bump @typescript-eslint/eslint-plugin from 5.48.1 to 5.48.2 [[b63500d](https://github.com/Tomas2D/promise-based-task/commit/b63500ddb230d7a1ddcb1dcac6dea2f10a2ce51a)]
+-  Bump @typescript-eslint/parser from 5.48.1 to 5.48.2 [[424a5ae](https://github.com/Tomas2D/promise-based-task/commit/424a5ae402fb4117d3bfc5fde9b79ddb0f563ed9)]
+-  Bump eslint from 8.31.0 to 8.32.0 [[8c9edd2](https://github.com/Tomas2D/promise-based-task/commit/8c9edd2c01036f9fc475321b2e7d2f088e910d09)]
+-  Bump prettier from 2.8.2 to 2.8.3 [[374aa6f](https://github.com/Tomas2D/promise-based-task/commit/374aa6f2a9dbd1aa9be9978cb7d3958464419a29)]
+-  Merge pull request [#122](https://github.com/Tomas2D/promise-based-task/issues/122) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/parser-5.48.1 [[b660121](https://github.com/Tomas2D/promise-based-task/commit/b660121a57f3945c1e9e03128cd0549c8f6477af)]
+-  Merge pull request [#123](https://github.com/Tomas2D/promise-based-task/issues/123) from Tomas2D/dependabot/npm_and_yarn/husky-8.0.3 [[93cc772](https://github.com/Tomas2D/promise-based-task/commit/93cc772b76f8a44cc7492e7a8cd11ef3e0fe611f)]
+-  Merge pull request [#125](https://github.com/Tomas2D/promise-based-task/issues/125) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-5.48.1 [[3286323](https://github.com/Tomas2D/promise-based-task/commit/32863231ad7c0c296c8ff4220be5352580bc6c27)]
+-  Merge pull request [#124](https://github.com/Tomas2D/promise-based-task/issues/124) from Tomas2D/dependabot/npm_and_yarn/prettier-2.8.2 [[43bd92a](https://github.com/Tomas2D/promise-based-task/commit/43bd92aa49532e656a8dcb2a2a34197338d93379)]
+-  Bump @typescript-eslint/parser from 5.48.0 to 5.48.1 [[e9a5005](https://github.com/Tomas2D/promise-based-task/commit/e9a5005860e5e4f55c5a6b30362a5560cda8e3a0)]
+-  Bump @typescript-eslint/eslint-plugin from 5.48.0 to 5.48.1 [[0bb99c3](https://github.com/Tomas2D/promise-based-task/commit/0bb99c3a8cb653a13c7e704ed654ae87f7ecfe70)]
+-  Bump prettier from 2.8.1 to 2.8.2 [[4a69602](https://github.com/Tomas2D/promise-based-task/commit/4a696020c0d6c3a9e636bf8991ac380534f3df62)]
+-  Bump husky from 8.0.2 to 8.0.3 [[9ef0199](https://github.com/Tomas2D/promise-based-task/commit/9ef01993ddea9c16352aa87a102fcb4b1b1e5aba)]
+-  Merge pull request [#117](https://github.com/Tomas2D/promise-based-task/issues/117) from Tomas2D/dependabot/npm_and_yarn/json5-2.2.3 [[b7e0663](https://github.com/Tomas2D/promise-based-task/commit/b7e066316912053b6681a5009e839b97f3c758d0)]
+-  Merge pull request [#118](https://github.com/Tomas2D/promise-based-task/issues/118) from Tomas2D/dependabot/npm_and_yarn/eslint-8.31.0 [[dac62ec](https://github.com/Tomas2D/promise-based-task/commit/dac62ec1056301fa3d0e5153605a8ce3be697f81)]
+-  Merge pull request [#119](https://github.com/Tomas2D/promise-based-task/issues/119) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/parser-5.48.0 [[112b998](https://github.com/Tomas2D/promise-based-task/commit/112b998f9212755ab960e0d908923750046b9d0e)]
+-  Merge pull request [#120](https://github.com/Tomas2D/promise-based-task/issues/120) from Tomas2D/dependabot/npm_and_yarn/eslint-config-prettier-8.6.0 [[92cd21d](https://github.com/Tomas2D/promise-based-task/commit/92cd21de374010efe12504f95b0d00214acaf82d)]
+-  Merge pull request [#121](https://github.com/Tomas2D/promise-based-task/issues/121) from Tomas2D/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-5.48.0 [[9336c88](https://github.com/Tomas2D/promise-based-task/commit/9336c88f519029e49070f705a61a63b746731670)]
+-  Bump @typescript-eslint/parser from 5.47.1 to 5.48.0 [[85c5411](https://github.com/Tomas2D/promise-based-task/commit/85c5411593bf0dbe79ae6d2ab870e9e24bc62b3e)]
+-  Bump eslint from 8.30.0 to 8.31.0 [[f3d9a81](https://github.com/Tomas2D/promise-based-task/commit/f3d9a81e517fa73168210f339321429a55f9d415)]
+-  Bump @typescript-eslint/eslint-plugin from 5.47.0 to 5.48.0 [[30c19e1](https://github.com/Tomas2D/promise-based-task/commit/30c19e1a6037dbac4b90607cacc7c3084ce812ab)]
+-  Bump eslint-config-prettier from 8.5.0 to 8.6.0 [[f69df3b](https://github.com/Tomas2D/promise-based-task/commit/f69df3bc457ef564a2b0f06de208dbb91e2934f0)]
+-  Bump json5 from 2.2.0 to 2.2.3 [[169f2fa](https://github.com/Tomas2D/promise-based-task/commit/169f2faca30d603d9708032696e30bdb20aca25b)]
+
+
 <a name="2.1.0"></a>
 ## 2.1.0 (2023-01-04)
 
