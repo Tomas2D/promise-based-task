@@ -1,5 +1,20 @@
 # Changelog
 
+<a name="2.2.2"></a>
+## 2.2.2 (2024-04-05)
+
+### Fixed
+
+- 🐛 Make Number.POSITIVE_INFINITE disable auto removal [[d7cd25f](https://github.com/Tomas2D/promise-based-task/commit/d7cd25fe0e33ab5642b2a93e118ca6ebd9ed607b)]
+
+### Miscellaneous
+
+-  Merge pull request [#342](https://github.com/Tomas2D/promise-based-task/issues/342) from Tomas2D/dependabot/npm_and_yarn/types/node-20.12.2 [[d9a2fb5](https://github.com/Tomas2D/promise-based-task/commit/d9a2fb5b8f15d7dcdbc536c14b5f7c8e0e94b92e)]
+-  Bump @types/node from 20.11.30 to 20.12.2 [[b1d63ee](https://github.com/Tomas2D/promise-based-task/commit/b1d63ee0ca9f858bd06e467e35bd98adf622dad9)]
+-  Merge pull request [#341](https://github.com/Tomas2D/promise-based-task/issues/341) from Tomas2D/dependabot/npm_and_yarn/types/node-20.11.30 [[7c604e8](https://github.com/Tomas2D/promise-based-task/commit/7c604e866fd05d651f96736f7e641c99b76ac8e6)]
+-  Bump @types/node from 20.11.27 to 20.11.30 [[8381a65](https://github.com/Tomas2D/promise-based-task/commit/8381a65cafc48dabff6ecaec60f0ddcbc6d0fcb8)]
+
+
 <a name="2.2.1"></a>
 ## 2.2.1 (2024-03-14)
 
