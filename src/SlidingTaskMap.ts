@@ -13,7 +13,7 @@ export class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
     }
     this.windowSize = Number(windowSize);
 
-    if (ttl !== undefined) {
+    if (ttl !== undefined && ttl !== Number.POSITIVE_INFINITY) {
       if (isNaN(ttl) || ttl < 1) {
         throw new TypeError(`ttl cannot be less than 1!`);
       } else {
@@ -32,7 +32,7 @@ export class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
   private setTimeout(key: K, customTTL?: number) {
     const ttl = Number(customTTL ?? this.ttl);
 
-    if (ttl > 0) {
+    if (ttl > 0 && ttl !== Number.POSITIVE_INFINITY) {
       const timeoutId = setTimeout(() => {
         this.delete(key);
       }, ttl);
