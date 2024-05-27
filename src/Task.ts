@@ -9,20 +9,20 @@ export enum TaskState {
 
 export class Task<T, E = any> implements Promise<T>, Deletable {
   private _promise: Promise<T>;
+  private _resolve!: (value: T | PromiseLike<T>) => void
+  private _reject!: (error: E) => void
+
   private _state: TaskState = TaskState.PENDING
   private _resolvedValue: Readonly<T> | undefined
   private _rejectedValue: E | undefined
 
-  public resolve!: (value: T | PromiseLike<T>) => void;
-  public reject!: (reason?: E) => void;
-
   constructor(immediatelyResolveValue?: T) {
     this._promise = new Promise<T>((_resolve, _reject) => {
-      this.resolve = function resolve(...args) {
+      this._resolve = (...args) => {
         this._state = TaskState.RESOLVED
         _resolve(...args);
       }
-      this.reject = function reject(...args) {
+      this._reject = (...args) => {
         this._state = TaskState.REJECTED
         _reject(...args);
       }
@@ -38,6 +38,14 @@ export class Task<T, E = any> implements Promise<T>, Deletable {
       /* Prevent "UnhandledPromiseRejectionWarning" */
       this._rejectedValue = err
     });
+  }
+
+  resolve(value: T | PromiseLike<T>): void {
+    return this._resolve(value)
+  }
+
+  reject(reason: E): void {
+    return this._reject(reason)
   }
 
   destructor(): void {
