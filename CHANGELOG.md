@@ -1,5 +1,27 @@
 # Changelog
 
+<a name="2.2.3"></a>
+## 2.2.3 (2024-05-27)
+
+### Added
+
+- ✨ Improve internal handling [[6801d73](https://github.com/Tomas2D/promise-based-task/commit/6801d733b97adbb2c05a834c225e3994d6ae01e8)]
+
+### Miscellaneous
+
+-  Merge pull request [#351](https://github.com/Tomas2D/promise-based-task/issues/351) from Tomas2D/dependabot/npm_and_yarn/types/node-20.12.12 [[7417375](https://github.com/Tomas2D/promise-based-task/commit/7417375ba4088570dcb42cbd29c13f85698fe334)]
+-  Bump @types/node from 20.12.8 to 20.12.12 [[75d85bd](https://github.com/Tomas2D/promise-based-task/commit/75d85bd7c09d56790a35245168b16648cc03f4a9)]
+-  Merge pull request [#350](https://github.com/Tomas2D/promise-based-task/issues/350) from Tomas2D/dependabot/npm_and_yarn/rimraf-5.0.7 [[7b01caf](https://github.com/Tomas2D/promise-based-task/commit/7b01cafcee933e0b1b1920d99dc5de219f7619ca)]
+-  Bump rimraf from 5.0.5 to 5.0.7 [[9d99bab](https://github.com/Tomas2D/promise-based-task/commit/9d99babf3bbfce49e01fc0bc3de237a6336b451d)]
+-  Merge pull request [#347](https://github.com/Tomas2D/promise-based-task/issues/347) from Tomas2D/dependabot/npm_and_yarn/types/node-20.12.8 [[5b1721f](https://github.com/Tomas2D/promise-based-task/commit/5b1721f5ce27ebaa97cde519d9239358e620c712)]
+-  Bump @types/node from 20.12.7 to 20.12.8 [[c9bc11c](https://github.com/Tomas2D/promise-based-task/commit/c9bc11c5366e05a660100249a9c7e677833c1b9b)]
+-  Merge pull request [#346](https://github.com/Tomas2D/promise-based-task/issues/346) from Tomas2D/dependabot/npm_and_yarn/types/node-20.12.7 [[b6f1e19](https://github.com/Tomas2D/promise-based-task/commit/b6f1e19341646a687b6a383f03ebbfef9e0d2b97)]
+-  Bump @types/node from 20.12.4 to 20.12.7 [[bcab6c2](https://github.com/Tomas2D/promise-based-task/commit/bcab6c2aff4b35ab59ac8186379d9f74ecb68147)]
+-  Merge pull request [#344](https://github.com/Tomas2D/promise-based-task/issues/344) from Tomas2D/dependabot/npm_and_yarn/types/node-20.12.4 [[1ca8fd7](https://github.com/Tomas2D/promise-based-task/commit/1ca8fd7d2c7cb19cf1c9e81ccad86e35e8a81966)]
+-  👷 Update build script [[871b83c](https://github.com/Tomas2D/promise-based-task/commit/871b83cda63f1d165dcf4d718737b509d98a1152)]
+-  Bump @types/node from 20.12.2 to 20.12.4 [[298b1bb](https://github.com/Tomas2D/promise-based-task/commit/298b1bbe7ee0f19d6b18afba007f57de1d5913f2)]
+
+
 <a name="2.2.2"></a>
 ## 2.2.2 (2024-04-05)
 
