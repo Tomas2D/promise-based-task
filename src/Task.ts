@@ -23,14 +23,18 @@ export class Task<T, E = any> implements Promise<T>, Deletable {
   constructor(input?: TaskInput) {
     this._promise = new Promise<T>((_resolve, _reject) => {
       this._resolve = (...args) => {
-        this._state = TaskState.RESOLVED
-        this._resolvedValue = args.at(0)
-        _resolve(...args);
+        if (this.state === TaskState.PENDING) {
+          this._state = TaskState.RESOLVED
+          this._resolvedValue = args.at(0)
+          _resolve(...args);
+        }
       }
       this._reject = (...args) => {
-        this._state = TaskState.REJECTED
-        this._rejectedValue = args.at(0)
-        _reject(...args);
+        if (this.state === TaskState.PENDING) {
+          this._state = TaskState.REJECTED
+          this._rejectedValue = args.at(0)
+          _reject(...args);
+        }
       }
     });
 
