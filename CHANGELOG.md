@@ -1,5 +1,28 @@
 # Changelog
 
+<a name="3.0.0"></a>
+## 3.0.0 (2024-06-15)
+
+### Added
+
+- ✨ Update interfaces, add signal support [[0289197](https://github.com/Tomas2D/promise-based-task/commit/0289197403f66f74513ffeae5243ddf9dc9baac4)]
+
+### Miscellaneous
+
+-  Merge pull request [#360](https://github.com/Tomas2D/promise-based-task/issues/360) from Tomas2D/dependabot/npm_and_yarn/braces-3.0.3 [[3f9d97f](https://github.com/Tomas2D/promise-based-task/commit/3f9d97fe110698b74ddfb5f41e96e1c4a8f9d0c0)]
+-  Merge pull request [#359](https://github.com/Tomas2D/promise-based-task/issues/359) from Tomas2D/dependabot/npm_and_yarn/prettier-3.3.2 [[dc362de](https://github.com/Tomas2D/promise-based-task/commit/dc362de919566eb9cf5659c6bc807e014a5a13f3)]
+-  Bump braces from 3.0.2 to 3.0.3 [[1cbaf7f](https://github.com/Tomas2D/promise-based-task/commit/1cbaf7f61d102178c6aee572e3e943f5ced890f5)]
+-  Bump prettier from 3.3.1 to 3.3.2 [[485895e](https://github.com/Tomas2D/promise-based-task/commit/485895efcab8035da9bab1608de7254667841303)]
+-  Merge pull request [#357](https://github.com/Tomas2D/promise-based-task/issues/357) from Tomas2D/dependabot/npm_and_yarn/prettier-3.3.1 [[18a6f92](https://github.com/Tomas2D/promise-based-task/commit/18a6f9280f814c4b61a17db4eb027957dce36d7b)]
+-  Merge pull request [#358](https://github.com/Tomas2D/promise-based-task/issues/358) from Tomas2D/dependabot/npm_and_yarn/types/node-20.14.2 [[8502777](https://github.com/Tomas2D/promise-based-task/commit/85027774c69b6001e9721bac452589cffc09d79b)]
+-  Bump @types/node from 20.14.1 to 20.14.2 [[511c607](https://github.com/Tomas2D/promise-based-task/commit/511c607b262da97051aba0d5f00406d59cf7b001)]
+-  Bump prettier from 3.2.5 to 3.3.1 [[09cb909](https://github.com/Tomas2D/promise-based-task/commit/09cb909796d29e1d3f39dcc8be7acb36930daccf)]
+-  Merge pull request [#355](https://github.com/Tomas2D/promise-based-task/issues/355) from Tomas2D/dependabot/npm_and_yarn/types/node-20.14.1 [[cef2d13](https://github.com/Tomas2D/promise-based-task/commit/cef2d13ec8090be76dce0f28c5ec84402cbb0754)]
+-  Bump @types/node from 20.14.0 to 20.14.1 [[dd080ab](https://github.com/Tomas2D/promise-based-task/commit/dd080ab8a770be4563a4621abcf070058c641b20)]
+-  Merge pull request [#354](https://github.com/Tomas2D/promise-based-task/issues/354) from Tomas2D/dependabot/npm_and_yarn/types/node-20.14.0 [[9f95095](https://github.com/Tomas2D/promise-based-task/commit/9f95095bfeeb239664a89cc3fd5c88b6cb82b62b)]
+-  Bump @types/node from 20.12.12 to 20.14.0 [[ba54781](https://github.com/Tomas2D/promise-based-task/commit/ba547817937a469fa7252e6a6c0664dcfca5d322)]
+
+
 <a name="2.2.3"></a>
 ## 2.2.3 (2024-05-27)
 
