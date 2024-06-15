@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="3.0.1"></a>
+## 3.0.1 (2024-06-15)
+
+### Fixed
+
+- 🐛 Prevent mutation resolved/rejected value [[cf09ed3](https://github.com/Tomas2D/promise-based-task/commit/cf09ed3c0a22ee56e8072f946357a38c78bd7b54)]
+
+
 <a name="3.0.0"></a>
 ## 3.0.0 (2024-06-15)
 
