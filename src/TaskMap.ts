@@ -1,10 +1,12 @@
-import type { Deletable } from './types';
+import { isDeletable } from './types';
 
-export class TaskMap<K, V extends Deletable> extends Map<K, V> {
+export class TaskMap<K, V> extends Map<K, V> {
   delete(key: K): boolean {
     if (this.has(key)) {
-      const target = this.get(key)!;
-      target.destructor();
+      const target = this.get(key);
+      if (isDeletable(target)) {
+        target.destructor();
+      }
       return super.delete(key);
     }
     return false;

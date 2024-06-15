@@ -1,11 +1,10 @@
-import type { Deletable } from './types';
 import { TaskMap } from './TaskMap';
 
-export class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
+export class SlidingTaskMap<K, V> extends TaskMap<K, V> {
   private readonly keysByTime: K[] = [];
   private readonly ttlMap: Map<K, NodeJS.Timeout> = new Map();
 
-  constructor(private readonly windowSize: number, private readonly ttl?: number) {
+  constructor(public readonly windowSize: number, public readonly ttl?: number) {
     super();
 
     if (windowSize < 1 || isNaN(windowSize)) {
@@ -73,21 +72,21 @@ export class SlidingTaskMap<K, V extends Deletable> extends TaskMap<K, V> {
     this.ttlMap.clear();
   }
 
-  pop(): boolean {
-    if (this.keysByTime.length === 0) {
-      return false;
+  pop() {
+    const key = this.keysByTime.at(-1);
+    if (key !== undefined) {
+      const item = this.get(key)
+      this.delete(key);
+      return item
     }
-
-    const key = this.keysByTime[this.keysByTime.length - 1];
-    return this.delete(key);
   }
 
-  shift(): boolean {
-    if (this.keysByTime.length === 0) {
-      return false;
+  shift() {
+    const key = this.keysByTime.at(0);
+    if (key !== undefined) {
+      const item = this.get(key)
+      this.delete(key);
+      return item
     }
-
-    const key = this.keysByTime[0];
-    return this.delete(key);
   }
 }

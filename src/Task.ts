@@ -7,45 +7,52 @@ export enum TaskState {
   REJECTED = 'rejected'
 }
 
+export interface TaskInput {
+  signal?: AbortSignal
+}
+
 export class Task<T, E = any> implements Promise<T>, Deletable {
   private _promise: Promise<T>;
-  private _resolve!: (value: T | PromiseLike<T>) => void
+  private _resolve!: (value: T) => void
   private _reject!: (error: E) => void
 
   private _state: TaskState = TaskState.PENDING
   private _resolvedValue: Readonly<T> | undefined
   private _rejectedValue: E | undefined
 
-  constructor(immediatelyResolveValue?: T) {
+  constructor(input?: TaskInput) {
     this._promise = new Promise<T>((_resolve, _reject) => {
       this._resolve = (...args) => {
         this._state = TaskState.RESOLVED
+        this._resolvedValue = args.at(0)
         _resolve(...args);
       }
       this._reject = (...args) => {
         this._state = TaskState.REJECTED
+        this._rejectedValue = args.at(0)
         _reject(...args);
       }
     });
 
-    if (arguments.length > 0) {
-      this.resolve(immediatelyResolveValue as T);
-    }
-
-    this._promise.then(value => {
-      this._resolvedValue = value
-    }).catch((err) => {
+    this._promise.catch(() => {
       /* Prevent "UnhandledPromiseRejectionWarning" */
-      this._rejectedValue = err
     });
+
+    input?.signal?.addEventListener?.("abort", () => {
+      this.reject(new TaskDestroyedException("Task has been aborted!") as E)
+    }, {
+      once: true,
+    })
   }
 
-  resolve(value: T | PromiseLike<T>): void {
-    return this._resolve(value)
+  resolve(value: T) {
+    this._resolve(value)
+    return this
   }
 
-  reject(reason: E): void {
-    return this._reject(reason)
+  reject(reason: E) {
+    this._reject(reason)
+    return this
   }
 
   destructor(): void {
