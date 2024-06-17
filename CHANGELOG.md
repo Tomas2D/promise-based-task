@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="3.0.2"></a>
+## 3.0.2 (2024-06-17)
+
+### Fixed
+
+- 🐛 Fix accessors [[23e2905](https://github.com/Tomas2D/promise-based-task/commit/23e2905a57da2d607d66cc8a689867be2168fcaf)]
+
+
 <a name="3.0.1"></a>
 ## 3.0.1 (2024-06-15)
 
