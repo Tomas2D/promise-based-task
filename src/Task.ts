@@ -49,14 +49,18 @@ export class Task<T, E = any> implements Promise<T>, Deletable {
     })
   }
 
+  static resolve<A>(value: A) {
+    const instance = new Task<A>()
+    instance.resolve(value)
+    return instance
+  }
+
   resolve(value: T) {
     this._resolve(value)
-    return this
   }
 
   reject(reason: E) {
     this._reject(reason)
-    return this
   }
 
   destructor(): void {

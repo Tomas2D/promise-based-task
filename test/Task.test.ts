@@ -48,7 +48,7 @@ describe('Task', () => {
     taskErr.reject(new Error('duno'))
     expect(taskErr.state).toBe('rejected')
 
-    const taskImmediately = new Task().resolve(42)
+    const taskImmediately = Task.resolve(42)
     expect(taskImmediately.state).toBe('resolved')
   })
 
@@ -56,7 +56,7 @@ describe('Task', () => {
     const task = new Task()
     expect(task.state).toBe('pending')
 
-    const taskUndefined = new Task().resolve(undefined)
+    const taskUndefined = Task.resolve(undefined)
     expect(taskUndefined.state).toBe('resolved')
     await expect(taskUndefined).resolves.toBe(undefined)
   });
@@ -68,7 +68,7 @@ describe('Task', () => {
   });
 
   it('Allow create instance with immediately resolve value', async () => {
-    const task = new Task<number>().resolve(42);
+    const task = Task.resolve(42);
     await expect(task).resolves.toBe(42);
   });
 
@@ -118,7 +118,7 @@ describe('Task', () => {
   });
 
   it('Prints valid name', () => {
-    const task = new Task<number>().resolve(42)
+    const task = Task.resolve(42)
     expect(task.toString()).toBe(`[object ${Task.name}]`)
   })
 });

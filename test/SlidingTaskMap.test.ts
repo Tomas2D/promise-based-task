@@ -9,13 +9,13 @@ describe('SlidingTaskMap', () => {
     const map = new SlidingTaskMap<string, Task<number>>(5);
 
     expect(map.size).toBe(0);
-    map.set('1', new Task<number>().resolve(1));
+    map.set('1', Task.resolve(1));
     expect(map.size).toBe(1);
     map.delete('1');
     expect(map.size).toBe(0);
-    map.set('2', new Task<number>().resolve(2));
+    map.set('2', Task.resolve(2));
     expect(map.size).toBe(1);
-    map.set('2', new Task<number>().resolve(2));
+    map.set('2', Task.resolve(2));
     expect(map.size).toBe(1);
     map.clear();
     expect(map.size).toBe(0);
@@ -29,7 +29,7 @@ describe('SlidingTaskMap', () => {
     for (const key of keys) {
       const prevSize = Number(map.size);
 
-      const task = new Task<string>().resolve(key);
+      const task = Task.resolve(key);
       map.set(key, task);
 
       expect(map.has(key)).toBe(true);
@@ -102,15 +102,15 @@ describe('SlidingTaskMap', () => {
 
     const ttl = 500;
     const map = new SlidingTaskMap<string, Task<number>>(5, ttl);
-    map.set('1', new Task<number>().resolve(1));
+    map.set('1', Task.resolve(1));
     expect(setTimeoutSpy).toBeCalledTimes(1);
     expect(map.size).toBe(1);
 
-    map.set('2', new Task<number>().resolve(2), ttl * 2);
+    map.set('2', Task.resolve(2), ttl * 2);
     expect(setTimeoutSpy).toBeCalledTimes(2);
     expect(map.size).toBe(2);
 
-    map.set('3', new Task<number>().resolve(3), ttl * 3);
+    map.set('3', Task.resolve(3), ttl * 3);
     expect(setTimeoutSpy).toBeCalledTimes(3);
     expect(map.size).toBe(3);
 
@@ -126,11 +126,11 @@ describe('SlidingTaskMap', () => {
     expect(map.size).toBe(0);
     expect(clearTimeoutSpy).toBeCalledTimes(3);
 
-    map.set('4', new Task<number>().resolve(4), ttl);
+    map.set('4', Task.resolve(4), ttl);
     expect(clearTimeoutSpy).toBeCalledTimes(3);
     expect(setTimeoutSpy).toBeCalledTimes(4);
     expect(map.size).toBe(1);
-    map.set('4', new Task<number>().resolve(4), ttl);
+    map.set('4', Task.resolve(4), ttl);
     expect(setTimeoutSpy).toBeCalledTimes(5);
     expect(clearTimeoutSpy).toBeCalledTimes(4);
     expect(map.size).toBe(1);
