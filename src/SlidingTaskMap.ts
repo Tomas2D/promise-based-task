@@ -34,7 +34,7 @@ export class SlidingTaskMap<K, V> extends TaskMap<K, V> {
     if (ttl > 0 && ttl !== Number.POSITIVE_INFINITY) {
       const timeoutId = setTimeout(() => {
         this.delete(key);
-      }, ttl);
+      }, ttl).unref();
 
       this.ttlMap.set(key, timeoutId);
     }
