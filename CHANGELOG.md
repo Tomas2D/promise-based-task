@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="3.1.0"></a>
+## 3.1.0 (2024-10-05)
+
+### Added
+
+- ✨ use unref on timeouts [[1d52713](https://github.com/Tomas2D/promise-based-task/commit/1d52713ee71721d26042503b247da68717eff7ab)]
+
+
 <a name="3.0.2"></a>
 ## 3.0.2 (2024-06-17)
 
