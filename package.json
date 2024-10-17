@@ -15,8 +15,8 @@
   "exports": {
     ".": {
       "require": "./lib/index.cjs",
-      "default": "./lib/index.js",
-      "import": "./lib/index.js"
+      "import": "./lib/index.js",
+      "default": "./lib/index.js"
     }
   },
   "files": [
