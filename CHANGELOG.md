@@ -1,5 +1,22 @@
 # Changelog
 
+<a name="3.1.1"></a>
+## 3.1.1 (2024-10-18)
+
+### Miscellaneous
+
+-  Merge pull request [#409](https://github.com/Tomas2D/promise-based-task/issues/409) from arne-kapell/patch-1 [[83ede3f](https://github.com/Tomas2D/promise-based-task/commit/83ede3f255b4bac14f5f11185b82b824e59a3547)]
+-  resolves &quot;Module not found&quot; error during external import [[481951f](https://github.com/Tomas2D/promise-based-task/commit/481951faa19f15f05f7c900da3767296869c76b7)]
+-  Merge pull request [#406](https://github.com/Tomas2D/promise-based-task/issues/406) from Tomas2D/dependabot/npm_and_yarn/prettier-3.3.3 [[11a2196](https://github.com/Tomas2D/promise-based-task/commit/11a2196ccf525239f285dabb3e4059dc9d0cc720)]
+-  Merge pull request [#407](https://github.com/Tomas2D/promise-based-task/issues/407) from Tomas2D/dependabot/npm_and_yarn/types/node-22.7.5 [[ea9c81e](https://github.com/Tomas2D/promise-based-task/commit/ea9c81ee4ef8e7866ced8e7b367ecd5e21fa44ef)]
+-  Bump prettier from 3.3.2 to 3.3.3 [[ac9761f](https://github.com/Tomas2D/promise-based-task/commit/ac9761f785f4ff5ad24a2f6935fe21150195de43)]
+-  Bump @types/node from 20.14.2 to 22.7.5 [[9d367d4](https://github.com/Tomas2D/promise-based-task/commit/9d367d4889001ca9efad30e30ba425d80e11074b)]
+-  Merge pull request [#402](https://github.com/Tomas2D/promise-based-task/issues/402) from Tomas2D/dependabot/npm_and_yarn/rollup-3.29.5 [[bfa2e2d](https://github.com/Tomas2D/promise-based-task/commit/bfa2e2de447a4bc8935845fd5744921cecd74de9)]
+-  Merge pull request [#404](https://github.com/Tomas2D/promise-based-task/issues/404) from Tomas2D/dependabot/npm_and_yarn/eslint-8.57.1 [[3d694df](https://github.com/Tomas2D/promise-based-task/commit/3d694df12d6c3d0497da122f8ed16c9b890574b6)]
+-  Bump eslint from 8.57.0 to 8.57.1 [[5998d42](https://github.com/Tomas2D/promise-based-task/commit/5998d42723e03bf8153490f08fb63ddbfa85c762)]
+-  Bump rollup from 3.8.1 to 3.29.5 [[2f2845c](https://github.com/Tomas2D/promise-based-task/commit/2f2845cffcb77c08d122b8f54e09a22f05f81441)]
+
+
 <a name="3.1.0"></a>
 ## 3.1.0 (2024-10-05)
 
