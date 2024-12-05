@@ -52,7 +52,7 @@
     "@typescript-eslint/parser": "^5.8.1",
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^9.0.0",
-    "husky": "^8.0.1",
+    "husky": "^9.1.7",
     "jest": "^27.4.5",
     "lint-staged": "^14.0.0",
     "prettier": "^3.0.0",
