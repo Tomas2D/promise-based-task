@@ -4,6 +4,7 @@
     "module": "commonjs",
     "lib": [
       "es2020",
+      "es2022.array",
       "dom",
       "dom.iterable"
     ],
